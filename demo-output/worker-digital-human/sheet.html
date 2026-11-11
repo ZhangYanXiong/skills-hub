@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="wx-build" content="10406266127d">
+<title>发布工作台 · 数字人办公卡在签字权</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:#eef1f5;color:#1f2328;
+     font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+     font-size:14px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:880px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px;
+      box-shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04)}
+h1{font-size:17px;margin:0 0 4px}
+.sub{color:#7a8494;font-size:12.5px;margin-bottom:16px}
+.field{margin-bottom:15px}
+.label{font-size:12px;color:#7a8494;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.value{font-size:14px;line-height:1.7;background:#f6f8fa;border:1px solid #e9edf2;border-radius:8px;
+       padding:10px 12px;word-break:break-word;white-space:pre-wrap}
+.row{display:flex;gap:8px;align-items:center}
+button{cursor:pointer;border:1px solid #d8dee6;background:#fff;border-radius:7px;padding:5px 11px;
+       font-size:12px;color:#374151;font-family:inherit;transition:background .15s,border-color .15s}
+button:hover{background:#f3f5f8}
+button:active{transform:translateY(1px)}
+button.primary{background:#2f6fed;color:#fff;border-color:#2f6fed}
+button.primary:hover{background:#255ccf}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cover{width:100%;border-radius:8px;border:1px solid #e5e9ef;display:block}
+.cover-label{font-size:11.5px;color:#7a8494;margin-top:5px}
+.check{font-size:13px;line-height:2;color:#374151}
+.check input{margin-right:7px;vertical-align:middle}
+#article-body{max-height:72vh;overflow:auto;border:1px solid #e5e9ef;border-radius:8px;padding:16px;background:#fff}
+.hint{font-size:12px;color:#8a94a0;margin-top:9px;line-height:1.65}
+.tag{display:inline-block;font-size:11px;background:#eef3ff;color:#2f6fed;border-radius:999px;padding:2px 9px;margin-left:6px}
+.warn{background:#fff8ec;border:1px solid #f3dfbc;border-radius:8px;padding:10px 12px;font-size:12.5px;
+      line-height:1.7;color:#7a5a1e;margin-top:10px}
+.ok{color:#0d9488;font-size:11.5px;min-width:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div>
+<div class="card">
+<h1>发布工作台</h1>
+<div class="sub">科技蓝 · 技术/产品向 · tech · 1152 字 · 1 张图</div>
+<div class="field"><div class="label"><span>① 标题（长）<span class='tag'>22 字 / 上限 64</span></span><button onclick="copyText(this,'f-title')">复制</button></div><div class="value" id="f-title">数字人进办公室，卡住的不是技术，是「谁签字」</div></div><div class="field"><div class="label"><span>② 短标题（信息流展示用）<span class='tag'>10 字</span></span><button onclick="copyText(this,'f-short')">复制</button></div><div class="value" id="f-short">数字人办公卡在签字权</div><div class="hint">公众号后台只填一个标题；短标题供你检查前 20 字是否说得清。</div></div><div class="field"><div class="label"><span>③ 摘要<span class='tag'>58 字 / 上限 120</span></span><button onclick="copyText(this,'f-summary')">复制</button></div><div class="value" id="f-summary">数字人协作办公真正卡住的，不是模型能力也不是形象逼真度，而是三件流程上的事：权限给到哪、决定谁签字、出错能不能撤回。</div></div><div class="field"><div class="label"><span>④ 作者（后台作者字段）</span><button onclick="copyText(this,'f-author')">复制</button></div><div class="value" id="f-author">云光迷途</div></div>
+</div>
+<div class="card"><div class="label"><span>封面图</span></div><div class="covers"><div><img class="cover" src="cover.png" alt="头条封面 900×383"><div class="cover-label">头条封面 900×383</div></div><div><img class="cover" src="cover-square.png" alt="方形 1080×1080"><div class="cover-label">方形 1080×1080</div></div><div><img class="cover" src="cover-thumb.png" alt="次条 200×200"><div class="cover-label">次条 200×200</div></div></div><div class="hint">上传时选 <b>cover.png</b> 作头条封面；次条用 cover-thumb.png。</div></div>
+<div class="card"><div class="label"><span>正文图片（1 张，必须逐张上传）</span></div><div class="hint" style="margin:0 0 6px">复制正文只带走文字和样式，<b>图片不会被带过去</b>。按顺序：点「复制图片」→ 到编辑器对应位置 Cmd+V；复制不了的，点「打开原图」后右键复制图片。</div><div style="display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #eef1f5"><img src="fig-permission-ladder.png" alt="" style="width:96px;height:auto;border-radius:6px;border:1px solid #e5e9ef;flex:none"><div style="min-width:0;flex:1"><div style="font-size:12.5px;line-height:1.6"><b>第 1 张</b> · fig-permission-ladder.png</div><div style="font-size:11.5px;color:#8a94a0;line-height:1.6">四个权限层级：能做什么，以及出错时代价落在哪里</div><div style="font-size:11.5px;margin-top:3px"><span style="color:#0d9488">本地文件，需手动上传</span></div><div style="margin-top:6px;display:flex;gap:8px;align-items:center"><button onclick="copyImg(this,'fig-permission-ladder.png')">复制图片</button><a href="fig-permission-ladder.png" target="_blank" style="font-size:11.5px;color:#2f6fed;text-decoration:none">打开原图</a></div></div></div></div>
+<div class="card"><div class="label"><span>发布前清单</span></div><div class="check"><div><input type="checkbox">标题、摘要已填入后台（不是正文里）</div><div><input type="checkbox">封面图已上传，头条用 cover.png</div><div><input type="checkbox">正文里的图片已在编辑器里逐张上传（本地图片不会自动带过去）</div><div><input type="checkbox">文末「阅读原文」链接已设置（如需要）</div><div><input type="checkbox">留言、打赏、原创声明按要求开启</div><div><input type="checkbox">通读一遍手机预览，重点看表格和代码块</div></div></div>
+</div>
+<div>
+<div class="card">
+<div class="row" style="justify-content:space-between;margin-bottom:11px"><b style="font-size:14px">正文</b><button class="primary" onclick="copyBody(this)">复制正文</button></div>
+<div id="article-body"><section style="font-family:-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;font-size:16px;line-height:1.85;letter-spacing:0.4px;color:#24292f;text-align:justify;word-break:break-word"><section style="font-size:22px;font-weight:700;line-height:1.5;color:#111827;margin:0 0 1.2em 0">数字人进办公室，卡住的不是技术，是「谁签字」</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">一个很典型的场景：</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">Demo 演示完，会议室里气氛很好——它能听懂指令、能查知识库、还能自动生成会议纪要。大家点头，觉得这事能成。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">然后有人问了一句：那它能直接把这个纪要发到项目群吗？</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">会议室安静了。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f"><strong style="color:#1a56db;font-weight:600">从一个能跑通的 Demo，到能进日常流程，中间隔的从来不是技术。</strong></section><section style="margin:1.4em 0;padding:12px 16px;border-radius:6px;border-left:3px solid #3b82f6;background-color:#eff6ff"><section style="font-weight:700;font-size:14.5px;margin:0 0 6px 0;line-height:1.5;color:#3b82f6">先说结论</section><section style="font-size:14.5px;line-height:1.8;color:#46505c;margin:0">数字人协作办公卡在三件流程上的事：<strong style="color:#1a56db;font-weight:600">权限给到哪、决定谁签字、出错能不能撤回</strong>。这三个答不清楚，能力再强也只能停在演示阶段。</section></section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">一、大家在比形象，卡住的其实是权限</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">现在市面上的数字人，展示重点几乎都在「像不像人」：表情、口型、语气、形象定制。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">但办公场景不需要一张脸。会议纪要、日程协调、流程催办、知识检索——这些事没有一件要求它长得像人。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">真正决定它能干多少的，是<strong style="color:#1a56db;font-weight:600">权限给到哪一层</strong>：</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f"><section style="margin:1.6em 0;text-align:center"><img src="fig-permission-ladder.png" alt="四个权限层级：能做什么，以及出错时代价落在哪里" style="width:100%;display:block;border-radius:6px;margin:0 auto"><section style="font-size:12.5px;color:#8a94a0;margin-top:8px;text-align:center;line-height:1.6">四个权限层级：能做什么，以及出错时代价落在哪里</section></section></section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">绝大多数团队会停在第一层。不是技术做不到，是<strong style="color:#1a56db;font-weight:600">不敢往上放</strong>。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">这里有个判断标准，我一直在用：<strong style="color:#1a56db;font-weight:600">这个动作做错了，能不能在十分钟内被人发现并撤回？</strong></section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">能，就放。不能，就必须保留一个人工卡点——这不是不信任它，是这个动作本身就不该全自动。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">二、它签字，还是你签字</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">这是全文我最想强调的一点。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">数字人产出的东西，最后以谁的名义发出去？</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">两种模式，失败后果完全不同：</section><section style="margin:1.4em 0;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6"><thead><tr><th style="background-color:#f1f5fb;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">模式</th><th style="background-color:#f1f5fb;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">流程</th><th style="background-color:#f1f5fb;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">出错时</th></tr></thead><tbody><tr><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">直接对外</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">数字人 → 客户 / 供应商</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">公司层面的错误，而且已经发出去了</td></tr><tr><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">人工确认</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">数字人 → 草稿 → 人确认 → 发出</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">多花 30 秒，责任清晰</td></tr></tbody></table></section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">很多数字人项目落地后出问题，不是因为能力不够，是因为<strong style="color:#1a56db;font-weight:600">一开始就跳过了人工确认这一环</strong>——它看起来挺准的，就顺手让它直接发了。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">所以我的建议很具体：<strong style="color:#1a56db;font-weight:600">在责任归属写进制度之前，不要让数字人直接对外。</strong></section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">内部可以随便试。对外必须过人手。这条线跟技术成熟度无关，跟「出事之后谁负责」有关。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">三、产出要能被快速判断对错</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">数字人最危险的失败方式不是错，是<strong style="color:#1a56db;font-weight:600">错了但看起来很像对的</strong>。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">一段流畅、结构完整、语气专业的会议纪要，可能把「延后到下周」记成了「提前到下周一」。你扫一眼根本发现不了。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">所以用它之前先问一句：它的产出来，你能不能快速判断对错？</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">三条缺一不可：</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">1.</span><strong style="color:#1a56db;font-weight:600">有出处</strong>：这句话依据的是哪份文件、哪条数据</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">2.</span><strong style="color:#1a56db;font-weight:600">有不确定性提示</strong>：拿不准的地方要标出来，而不是硬编一个肯定句</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">3.</span><strong style="color:#1a56db;font-weight:600">结构化</strong>：既能被机器校验，也能被人快速扫读</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">如果它的输出你只能「整体读一遍，感觉一下」，那这个场景还不成熟——不是它不行，是你的验收方式还没准备好。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">四、拿三个问题去判断你的场景</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">1.</span><strong style="color:#1a56db;font-weight:600">这个动作做错了，十分钟内能发现吗？</strong></section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">2.</span><strong style="color:#1a56db;font-weight:600">它的产出发给谁，以谁的名义？</strong></section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#2f6fed;font-weight:700;font-size:0.95em;padding-right:0.35em">3.</span><strong style="color:#1a56db;font-weight:600">它依据的信息，有没有单一可信来源？</strong></section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">三个都答得出来，可以接。答不出来就先别接——补齐流程比接入工具便宜得多。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">补一句：这三题里只要有一题答案是「看情况」，那就是还没想清楚。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">五、换个视角：它不是同事，是节点</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">把数字人当成「新同事」，你会不自觉地纠结它像不像人、够不够聪明、会不会取代谁。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">把它当成<strong style="color:#1a56db;font-weight:600">一个会说话的流程节点</strong>，问题就换了一批：它接在流程的哪个位置、上游给它什么输入、下游怎么验收、出错怎么回滚。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">前一种问法，最后大概率得到一个更聪明的玩具。<br>后一种问法，才可能真的省下时间。</section><section style="text-align:center;color:#a9b4c2;margin:2em 0;letter-spacing:7px;font-size:15px;line-height:1">· · ·</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">你们团队把数字人接过实际流程吗？</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">我最想知道的不是它好不好用，而是——<strong style="color:#1a56db;font-weight:600">你们最后把哪一步交给了它，又是哪一步死活不敢交。</strong></section></section></div>
+<div class="warn">按钮复制的是<b>富文本</b>（保留内联样式），粘贴到公众号编辑区格式不会散。但<b>图片不会被带过去</b>——按左侧「正文图片」清单逐张上传。</div>
+</div>
+</div>
+</div>
+<div class="hint" style="margin-top:14px;padding-top:12px;border-top:1px solid #eef1f5">构建指纹 <code>10406266127d</code> · 生成于 2026-11-11T18:47:17+08:00<br>工作台是生成时的快照：改了正文、元信息或主题，必须重跑 <code>md2wx.py --sheet</code>，否则提交的是旧版本。</div><script>
+function flash(btn,text,ms){var o=btn.textContent;btn.textContent=text;
+  setTimeout(function(){btn.textContent=o;},ms||1500);}
+function copyText(btn,id){
+  var el=document.getElementById(id);
+  var t=el.innerText;
+  var ta=document.createElement('textarea');
+  ta.value=t;ta.style.position='fixed';ta.style.top='-9999px';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  document.body.removeChild(ta);
+  if(ok){flash(btn,'已复制');return;}
+  // 失败时退回「选中原文，让用户手动 Cmd+C」
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  flash(btn,'已选中，请按 Cmd+C',2600);
+}
+async function copyImg(btn,src){
+  try{
+    var resp=await fetch(src);
+    if(!resp.ok) throw new Error('fetch failed');
+    var blob=await resp.blob();
+    await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+    flash(btn,'已复制图片',1800);return;
+  }catch(e){}
+  window.open(src,'_blank');
+  flash(btn,'已打开，右键复制',2600);
+}
+function copyBody(btn){
+  var el=document.getElementById('article-body');
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  if(ok){flash(btn,'已复制正文');sel.removeAllRanges();return;}
+  flash(btn,'已选中正文，请按 Cmd+C',2600);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="wx-build" content="7036cd430c00">
+<title>发布工作台 · 周报别再写成流水账了</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:#eef1f5;color:#1f2328;
+     font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+     font-size:14px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:880px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px;
+      box-shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04)}
+h1{font-size:17px;margin:0 0 4px}
+.sub{color:#7a8494;font-size:12.5px;margin-bottom:16px}
+.field{margin-bottom:15px}
+.label{font-size:12px;color:#7a8494;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.value{font-size:14px;line-height:1.7;background:#f6f8fa;border:1px solid #e9edf2;border-radius:8px;
+       padding:10px 12px;word-break:break-word;white-space:pre-wrap}
+.row{display:flex;gap:8px;align-items:center}
+button{cursor:pointer;border:1px solid #d8dee6;background:#fff;border-radius:7px;padding:5px 11px;
+       font-size:12px;color:#374151;font-family:inherit;transition:background .15s,border-color .15s}
+button:hover{background:#f3f5f8}
+button:active{transform:translateY(1px)}
+button.primary{background:#2f6fed;color:#fff;border-color:#2f6fed}
+button.primary:hover{background:#255ccf}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cover{width:100%;border-radius:8px;border:1px solid #e5e9ef;display:block}
+.cover-label{font-size:11.5px;color:#7a8494;margin-top:5px}
+.check{font-size:13px;line-height:2;color:#374151}
+.check input{margin-right:7px;vertical-align:middle}
+#article-body{max-height:72vh;overflow:auto;border:1px solid #e5e9ef;border-radius:8px;padding:16px;background:#fff}
+.hint{font-size:12px;color:#8a94a0;margin-top:9px;line-height:1.65}
+.tag{display:inline-block;font-size:11px;background:#eef3ff;color:#2f6fed;border-radius:999px;padding:2px 9px;margin-left:6px}
+.warn{background:#fff8ec;border:1px solid #f3dfbc;border-radius:8px;padding:10px 12px;font-size:12.5px;
+      line-height:1.7;color:#7a5a1e;margin-top:10px}
+.ok{color:#0d9488;font-size:11.5px;min-width:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div>
+<div class="card">
+<h1>发布工作台</h1>
+<div class="sub">成长橙 · 职场/成长向 · growth · 1248 字 · 1 张图</div>
+<div class="field"><div class="label"><span>① 标题（长）<span class='tag'>29 字 / 上限 64</span></span><button onclick="copyText(this,'f-title')">复制</button></div><div class="value" id="f-title">我写废了 150 份周报才明白：领导要的不是「你做了什么」</div></div><div class="field"><div class="label"><span>② 短标题（信息流展示用）<span class='tag'>10 字</span></span><button onclick="copyText(this,'f-short')">复制</button></div><div class="value" id="f-short">周报别再写成流水账了</div><div class="hint">公众号后台只填一个标题；短标题供你检查前 20 字是否说得清。</div></div><div class="field"><div class="label"><span>③ 摘要<span class='tag'>48 字 / 上限 120</span></span><button onclick="copyText(this,'f-summary')">复制</button></div><div class="value" id="f-summary">周报要经过三层转述，每过一手都在丢信息。如果领导不能从里面直接抄走一句话，你这周的产出就等于零。</div></div><div class="field"><div class="label"><span>④ 作者（后台作者字段）</span><button onclick="copyText(this,'f-author')">复制</button></div><div class="value" id="f-author">云光迷途</div></div>
+</div>
+<div class="card"><div class="label"><span>封面图</span></div><div class="covers"><div><img class="cover" src="cover.png" alt="头条封面 900×383"><div class="cover-label">头条封面 900×383</div></div><div><img class="cover" src="cover-square.png" alt="方形 1080×1080"><div class="cover-label">方形 1080×1080</div></div><div><img class="cover" src="cover-thumb.png" alt="次条 200×200"><div class="cover-label">次条 200×200</div></div></div><div class="hint">上传时选 <b>cover.png</b> 作头条封面；次条用 cover-thumb.png。</div></div>
+<div class="card"><div class="label"><span>正文图片（1 张，必须逐张上传）</span></div><div class="hint" style="margin:0 0 6px">复制正文只带走文字和样式，<b>图片不会被带过去</b>。按顺序：点「复制图片」→ 到编辑器对应位置 Cmd+V；复制不了的，点「打开原图」后右键复制图片。</div><div style="display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #eef1f5"><img src="fig-reader-chain.png" alt="" style="width:96px;height:auto;border-radius:6px;border:1px solid #e5e9ef;flex:none"><div style="min-width:0;flex:1"><div style="font-size:12.5px;line-height:1.6"><b>第 1 张</b> · fig-reader-chain.png</div><div style="font-size:11.5px;color:#8a94a0;line-height:1.6">周报的三层转述链</div><div style="font-size:11.5px;margin-top:3px"><span style="color:#0d9488">本地文件，需手动上传</span></div><div style="margin-top:6px;display:flex;gap:8px;align-items:center"><button onclick="copyImg(this,'fig-reader-chain.png')">复制图片</button><a href="fig-reader-chain.png" target="_blank" style="font-size:11.5px;color:#2f6fed;text-decoration:none">打开原图</a></div></div></div></div>
+<div class="card"><div class="label"><span>发布前清单</span></div><div class="check"><div><input type="checkbox">标题、摘要已填入后台（不是正文里）</div><div><input type="checkbox">封面图已上传，头条用 cover.png</div><div><input type="checkbox">正文里的图片已在编辑器里逐张上传（本地图片不会自动带过去）</div><div><input type="checkbox">文末「阅读原文」链接已设置（如需要）</div><div><input type="checkbox">留言、打赏、原创声明按要求开启</div><div><input type="checkbox">通读一遍手机预览，重点看表格和代码块</div></div></div>
+</div>
+<div>
+<div class="card">
+<div class="row" style="justify-content:space-between;margin-bottom:11px"><b style="font-size:14px">正文</b><button class="primary" onclick="copyBody(this)">复制正文</button></div>
+<div id="article-body"><section style="font-family:-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;font-size:16px;line-height:1.9;letter-spacing:0.5px;color:#2e2a26;text-align:justify;word-break:break-word"><section style="font-size:22px;font-weight:700;line-height:1.5;color:#231f1b;margin:0 0 1.2em 0">我写废了 150 份周报才明白：领导要的不是「你做了什么」</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">周五下午四点，你打开周报文档，光标停在「本周工作」那一栏。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">想了三十秒，敲下：</section><section style="border-left:3px solid #e8c9a8;background-color:#fbf7f2;padding:12px 16px;margin:1.4em 0;border-radius:4px"><section style="color:#5d564e;font-size:14.5px;line-height:1.8;margin:0">本周完成接口重构，修复线上问题 3 个，下周推进二期开发。</section></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">点保存，关掉。一周结束。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26"><strong style="color:#b8571a;font-weight:600">这份周报唯一的作用，是证明你周五下午四点还坐在工位上。</strong></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">我也这么写了快三年。直到有一次，我在会议室白板上看到我领导提交给他领导的周报——他把我们组十几个人交上去的那些三行字，扩写成了三页。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">那一刻我才意识到，问题不在「写得不够多」，而在写的方向从一开始就错了。</section><section style="margin:1.4em 0;padding:12px 16px;border-radius:8px;border-left:3px solid #e08a3c;background-color:#fff7ed"><section style="font-weight:700;font-size:14.5px;margin:0 0 6px 0;line-height:1.5;color:#e08a3c">先说结论</section><section style="font-size:14.5px;line-height:1.8;color:#46505c;margin:0">周报真正的读者不是你的领导，是<strong style="color:#b8571a;font-weight:600">领导的领导</strong>。你要做的不是汇报，是给领导提供能被直接引用的素材。</section></section><section style="bar-width:4px;font-size:18px;font-weight:700;line-height:1.5;color:#231f1b;margin:2em 0 0.9em 0;background-color:#fdf2e7;padding:3px 12px;border-radius:6px;display:inline-block">周报是一条转述链，不是一份文档</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">你以为你在写周报，其实你在给一条传递链供料：</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26"><section style="margin:1.6em 0;text-align:center"><img src="fig-reader-chain.png" alt="周报的三层转述链" style="width:100%;display:block;border-radius:6px;margin:0 auto"><section style="font-size:12.5px;color:#8a94a0;margin-top:8px;text-align:center;line-height:1.6">周报的三层转述链</section></section></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">每往上走一层，信息就被压缩一次。到了老板那里，你这一周的全部存在，可能只剩一个数字或一句话。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">所以判断一份周报合不合格，标准很粗暴：<strong style="color:#b8571a;font-weight:600">你的领导能不能从里面直接抄出一句话，放进他自己的汇报里？</strong></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">抄不出来，那你这周的产出，在那条链路上就等于零。</section><section style="bar-width:4px;font-size:18px;font-weight:700;line-height:1.5;color:#231f1b;margin:2em 0 0.9em 0;background-color:#fdf2e7;padding:3px 12px;border-radius:6px;display:inline-block">我改成三段式之后</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">改造后我只写三块，顺序固定，加起来 400 字以内。</section><section style="font-size:16.5px;font-weight:700;line-height:1.5;color:#b8571a;margin:1.6em 0 0.6em 0">第一块：结论区，三行之内</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">只回答一个问题：这周最重要的一件事是什么，结果怎么样。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">不要写「完成了 X 模块开发」，要写：</section><section style="border-left:3px solid #e8c9a8;background-color:#fbf7f2;padding:12px 16px;margin:1.4em 0;border-radius:4px"><section style="color:#5d564e;font-size:14.5px;line-height:1.8;margin:0">支付超时率从 2.1% 降到 0.3%，本周已灰度全量，观察 3 天后若无异常再关掉降级开关。</section></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">一句话里有对象、有变化、有时间，还有下一步。这句话领导拿过去就能用，不用再问你细节。</section><section style="font-size:16.5px;font-weight:700;line-height:1.5;color:#b8571a;margin:1.6em 0 0.6em 0">第二块：证据区，写成能独立成立的句子</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">把支撑结论的东西摆出来。关键不是「写全」，而是「单独成立」。</section><section style="margin:1.4em 0;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6"><thead><tr><th style="background-color:#f9f3ec;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">写法</th><th style="background-color:#f9f3ec;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">例子</th><th style="background-color:#f9f3ec;padding:9px 12px;font-weight:600;color:#334155;border:1px solid #e3e9f2;text-align:left">能否被引用</th></tr></thead><tbody><tr><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">流水账</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">本周修复了 3 个线上问题</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">不能，信息量为 0</td></tr><tr><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">半成品</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">优化了订单查询性能</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">不能，没有对比</td></tr><tr><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">可引用</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">订单列表 P99 从 1.8s 降到 420ms，影响日均 12 万次请求</td><td style="padding:9px 12px;color:#46505c;border:1px solid #e3e9f2">能，直接进周会</td></tr></tbody></table></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">判断标准：<strong style="color:#b8571a;font-weight:600">把这句话单独发给一个完全不了解背景的人，他能不能看懂发生了什么。</strong></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">看不懂，就还没写完。</section><section style="font-size:16.5px;font-weight:700;line-height:1.5;color:#b8571a;margin:1.6em 0 0.6em 0">第三块：风险区，主动暴露，别等被问</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">这一块最容易被跳过，也最容易加分。写三件事：</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;font-size:0.95em;padding-right:0.35em">1.</span>卡在哪</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;font-size:0.95em;padding-right:0.35em">2.</span>需要谁配合</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;font-size:0.95em;padding-right:0.35em">3.</span>不解决会在什么时候炸</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">比如：</section><section style="border-left:3px solid #e8c9a8;background-color:#fbf7f2;padding:12px 16px;margin:1.4em 0;border-radius:4px"><section style="color:#5d564e;font-size:14.5px;line-height:1.8;margin:0">二期依赖风控团队的口径对齐，对方目前在排期。如果本周三前没确认，上线时间会顺延一周。</section></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">这不是甩锅，这是<strong style="color:#b8571a;font-weight:600">提前给别人留出决策时间</strong>。领导最怕的不是有问题，是最后一刻才知道有问题。</section><section style="margin:1.4em 0;padding:12px 16px;border-radius:8px;border-left:3px solid #c2410c;background-color:#fff7ed"><section style="font-weight:700;font-size:14.5px;margin:0 0 6px 0;line-height:1.5;color:#c2410c">两个别写</section><section style="font-size:14.5px;line-height:1.8;color:#46505c;margin:0">一是别写成自我批评（「我沟通不够及时」），领导要的是下一步动作，不是检讨书。<br>二是别只报风险不给方案（「存在风险，请领导支持」），至少给两个选项，让他做选择而不是出题。</section></section><section style="bar-width:4px;font-size:18px;font-weight:700;line-height:1.5;color:#231f1b;margin:2em 0 0.9em 0;background-color:#fdf2e7;padding:3px 12px;border-radius:6px;display:inline-block">可以直接抄的模板</section><section style="background-color:#2b2622;border-radius:8px;margin:1.4em 0;overflow:hidden"><section style="color:#7f8da3;font-size:11px;padding:9px 16px 0 16px;letter-spacing:1px;text-transform:uppercase;line-height:1.4">markdown</section><pre style="margin:0;padding:13px 16px;overflow-x:auto"><code style="color:#e3e9f2;font-size:13px;line-height:1.65;font-family:'SF Mono', Menlo, Consolas, monospace;white-space:pre">## 一、本周最重要的一件事
+&lt;一句话：对象 + 变化 + 影响&gt;
+
+## 二、支撑证据
+- &lt;可独立成立的数据句&gt;
+- &lt;可独立成立的数据句&gt;
+
+## 三、风险与需要的支持
+- 卡点：&lt;具体到人或系统&gt;
+- 需要的支持：&lt;具体动作，不要写「支持一下」&gt;
+- 时间窗：&lt;几号前必须给答复&gt;</code></pre></section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">三段写完，我一般十分钟。写长了没人看，写短了没信息量，<strong style="color:#b8571a;font-weight:600">400 字是这两件事的平衡点</strong>。</section><section style="bar-width:4px;font-size:18px;font-weight:700;line-height:1.5;color:#231f1b;margin:2em 0 0.9em 0;background-color:#fdf2e7;padding:3px 12px;border-radius:6px;display:inline-block">三个月的实测变化</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">说实话，不确定是不是周报的功劳，但确实发生了：</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;padding-right:0.35em">•</span>部门周会上，领导开始直接念我写的句子</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;padding-right:0.35em">•</span>季度复盘，我们组被点名讲了两次</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#d2691e;font-weight:700;padding-right:0.35em">•</span>涨薪这件事，我没主动提</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">但对我自己最大的改变其实是另一个：<strong style="color:#b8571a;font-weight:600">每周被迫回答一次「这周到底产出了什么」</strong>。</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">这个问题会逼着你看清哪些事真有价值，哪些只是在忙。当一个任务你没法用「带来了什么变化」来描述的时候，它大概率本来就不该占用你一周。</section><section style="text-align:center;color:#a9b4c2;margin:2em 0;letter-spacing:7px;font-size:15px;line-height:1">· · ·</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">你的周报上一次被领导引用是什么时候？</section><section style="margin:0 0 1.6em 0;line-height:1.9;color:#2e2a26">如果没有，下周一可以只改一个地方：把第一行的「完成了什么」，换成「带来了什么变化」。</section></section></div>
+<div class="warn">按钮复制的是<b>富文本</b>（保留内联样式），粘贴到公众号编辑区格式不会散。但<b>图片不会被带过去</b>——按左侧「正文图片」清单逐张上传。</div>
+</div>
+</div>
+</div>
+<div class="hint" style="margin-top:14px;padding-top:12px;border-top:1px solid #eef1f5">构建指纹 <code>7036cd430c00</code> · 生成于 2026-11-11T18:47:16+08:00<br>工作台是生成时的快照：改了正文、元信息或主题，必须重跑 <code>md2wx.py --sheet</code>，否则提交的是旧版本。</div><script>
+function flash(btn,text,ms){var o=btn.textContent;btn.textContent=text;
+  setTimeout(function(){btn.textContent=o;},ms||1500);}
+function copyText(btn,id){
+  var el=document.getElementById(id);
+  var t=el.innerText;
+  var ta=document.createElement('textarea');
+  ta.value=t;ta.style.position='fixed';ta.style.top='-9999px';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  document.body.removeChild(ta);
+  if(ok){flash(btn,'已复制');return;}
+  // 失败时退回「选中原文，让用户手动 Cmd+C」
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  flash(btn,'已选中，请按 Cmd+C',2600);
+}
+async function copyImg(btn,src){
+  try{
+    var resp=await fetch(src);
+    if(!resp.ok) throw new Error('fetch failed');
+    var blob=await resp.blob();
+    await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+    flash(btn,'已复制图片',1800);return;
+  }catch(e){}
+  window.open(src,'_blank');
+  flash(btn,'已打开，右键复制',2600);
+}
+function copyBody(btn){
+  var el=document.getElementById('article-body');
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  if(ok){flash(btn,'已复制正文');sel.removeAllRanges();return;}
+  flash(btn,'已选中正文，请按 Cmd+C',2600);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "指标": {
+    "标题": "AI 焦虑的真相：不是被取代，是「积累了也没用」",
+    "正文字数": 1236,
+    "素材卡": 0,
+    "大纲支撑": 0,
+    "正文引用编号": 0,
+    "构建指纹": "e4d2f77241fc"
+  },
+  "findings": [
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 0,
+      "matched": "6 个带单位数字",
+      "message": "没有提供素材卡，正文里的数字无法校验出处",
+      "suggest": "有素材就传 --cards；纯观点稿请确认这些数字是否必须保留",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 4,
+      "matched": "一条",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 18,
+      "matched": "一个",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 22,
+      "matched": "一次",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 30,
+      "matched": "一小时",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 34,
+      "matched": "三个月",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    },
+    {
+      "severity": "low",
+      "category": "数据来源",
+      "line": 68,
+      "matched": "三个",
+      "message": "该数字没有材料支撑",
+      "suggest": "删掉、改成定性表述，或补素材卡",
+      "file": "正文"
+    }
+  ],
+  "counts": {
+    "high": 0,
+    "medium": 0,
+    "low": 7
+  }
+}

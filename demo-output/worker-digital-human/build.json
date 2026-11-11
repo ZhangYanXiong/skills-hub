@@ -1,0 +1,47 @@
+{
+  "schema": 2,
+  "fingerprint": "10406266127d",
+  "generator": "2.2.0",
+  "generated_at": "2026-11-11T18:47:17+08:00",
+  "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/worker-digital-human/article.md",
+  "theme": "tech",
+  "word_count": 1152,
+  "render": {
+    "theme": "tech",
+    "title": "数字人进办公室，卡住的不是技术，是「谁签字」",
+    "author": "云光迷途",
+    "author_override": false,
+    "theme_override": false,
+    "title_override": false,
+    "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/worker-digital-human/article.md",
+    "html": "article.html",
+    "body": true,
+    "sheet": true
+  },
+  "outputs": {
+    "html": "article.html",
+    "body": "article.body.html",
+    "sheet": "sheet.html"
+  },
+  "artifact_sha256": {
+    "html": "7189cdbdb5e10c4545388bfa8163323e9e9b7e620755f9b41fd71f30ebe87cdd",
+    "body": "2df129209ee046a5d4155d4469d494d0ba2ea22c302a5c1b4a221eebde5f4004",
+    "sheet": "36703da94a65d62915d36025f7a656337ca3a27fb1cc545df2324746cd3ed0d2"
+  },
+  "inputs": {
+    "text_sha256": "cc938b445a060a4cab8d74ae2237326603ebb12fbb381e3280cf260b0321537b",
+    "theme_sha256": "3ced91d570a35db9d6afc3c999c5f93f915ffce7726f7f960c5301b12ed8c731",
+    "images": [
+      "cover-square.png",
+      "cover-thumb.png",
+      "cover.png",
+      "fig-permission-ladder.png"
+    ]
+  },
+  "assets": {
+    "cover-square.png": "99ef60d86b18daad44756f3aad63d76311c68cc3168cd940bfa9e8c468d03e7a",
+    "cover-thumb.png": "afb895b5933694a61ee30dd05c6e7f9f732f7ac9d51ce133e8acb82194042639",
+    "cover.png": "11b31d9d57e895b0604a13297cdbe972783068d0852648337394faa65fdf93ed",
+    "fig-permission-ladder.png": "dc3861d8294cb0d1803bfb424fab2dbfbb10bb975cd151821687cb2a4e59845c"
+  }
+}

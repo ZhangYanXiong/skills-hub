@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="wx-build" content="6e015f928eed">
+<title>发布工作台 · 先砍依赖再加缓存</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:#eef1f5;color:#1f2328;
+     font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+     font-size:14px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:880px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px;
+      box-shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04)}
+h1{font-size:17px;margin:0 0 4px}
+.sub{color:#7a8494;font-size:12.5px;margin-bottom:16px}
+.field{margin-bottom:15px}
+.label{font-size:12px;color:#7a8494;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.value{font-size:14px;line-height:1.7;background:#f6f8fa;border:1px solid #e9edf2;border-radius:8px;
+       padding:10px 12px;word-break:break-word;white-space:pre-wrap}
+.row{display:flex;gap:8px;align-items:center}
+button{cursor:pointer;border:1px solid #d8dee6;background:#fff;border-radius:7px;padding:5px 11px;
+       font-size:12px;color:#374151;font-family:inherit;transition:background .15s,border-color .15s}
+button:hover{background:#f3f5f8}
+button:active{transform:translateY(1px)}
+button.primary{background:#2f6fed;color:#fff;border-color:#2f6fed}
+button.primary:hover{background:#255ccf}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cover{width:100%;border-radius:8px;border:1px solid #e5e9ef;display:block}
+.cover-label{font-size:11.5px;color:#7a8494;margin-top:5px}
+.check{font-size:13px;line-height:2;color:#374151}
+.check input{margin-right:7px;vertical-align:middle}
+#article-body{max-height:72vh;overflow:auto;border:1px solid #e5e9ef;border-radius:8px;padding:16px;background:#fff}
+.hint{font-size:12px;color:#8a94a0;margin-top:9px;line-height:1.65}
+.tag{display:inline-block;font-size:11px;background:#eef3ff;color:#2f6fed;border-radius:999px;padding:2px 9px;margin-left:6px}
+.warn{background:#fff8ec;border:1px solid #f3dfbc;border-radius:8px;padding:10px 12px;font-size:12.5px;
+      line-height:1.7;color:#7a5a1e;margin-top:10px}
+.ok{color:#0d9488;font-size:11.5px;min-width:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div>
+<div class="card">
+<h1>发布工作台</h1>
+<div class="sub">科技蓝 · 技术/产品向 · tech · 277 字 · 0 张图</div>
+<div class="field"><div class="label"><span>① 标题（长）<span class='tag'>18 字 / 上限 64</span></span><button onclick="copyText(this,'f-title')">复制</button></div><div class="value" id="f-title">支付超时治理：先砍同步依赖，再加缓存</div></div><div class="field"><div class="label"><span>② 短标题（信息流展示用）<span class='tag'>8 字</span></span><button onclick="copyText(this,'f-short')">复制</button></div><div class="value" id="f-short">先砍依赖再加缓存</div><div class="hint">公众号后台只填一个标题；短标题供你检查前 20 字是否说得清。</div></div><div class="field"><div class="label"><span>③ 摘要<span class='tag'>43 字 / 上限 120</span></span><button onclick="copyText(this,'f-summary')">复制</button></div><div class="value" id="f-summary">超时集中在晚高峰，说明问题不在平均性能，而在同步依赖链。先砍依赖，缓存和降级排在后面。</div></div><div class="field"><div class="label"><span>④ 作者（后台作者字段）</span><button onclick="copyText(this,'f-author')">复制</button></div><div class="value" id="f-author">云光迷途</div></div>
+</div>
+<div class="card"><div class="label"><span>封面图</span></div><div class="covers"><div><img class="cover" src="cover.png" alt="头条封面 900×383"><div class="cover-label">头条封面 900×383</div></div><div><img class="cover" src="cover-square.png" alt="方形 1080×1080"><div class="cover-label">方形 1080×1080</div></div><div><img class="cover" src="cover-thumb.png" alt="次条 200×200"><div class="cover-label">次条 200×200</div></div></div><div class="hint">上传时选 <b>cover.png</b> 作头条封面；次条用 cover-thumb.png。</div></div>
+
+<div class="card"><div class="label"><span>发布前清单</span></div><div class="check"><div><input type="checkbox">标题、摘要已填入后台（不是正文里）</div><div><input type="checkbox">封面图已上传，头条用 cover.png</div><div><input type="checkbox">正文里的图片已在编辑器里逐张上传（本地图片不会自动带过去）</div><div><input type="checkbox">文末「阅读原文」链接已设置（如需要）</div><div><input type="checkbox">留言、打赏、原创声明按要求开启</div><div><input type="checkbox">通读一遍手机预览，重点看表格和代码块</div></div></div>
+</div>
+<div>
+<div class="card">
+<div class="row" style="justify-content:space-between;margin-bottom:11px"><b style="font-size:14px">正文</b><button class="primary" onclick="copyBody(this)">复制正文</button></div>
+<div id="article-body"><section style="font-family:-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;font-size:16px;line-height:1.85;letter-spacing:0.4px;color:#24292f;text-align:justify;word-break:break-word"><section style="font-size:22px;font-weight:700;line-height:1.5;color:#111827;margin:0 0 1.2em 0">支付超时治理：先砍同步依赖，再加缓存</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">大部分支付超时不是「算得慢」，而是同步依赖链在峰值请求下被逐层放大。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">证据是分布：超时集中在晚高峰，而不是随机分布在一天里 [D5]。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">我们按这个顺序改</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">第一刀砍同步依赖，把风控调用从同步改成异步 [D3]。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">第二刀补缓存，让重复查询不再打到下游 [D4]。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">第三刀才是降级——它是兜底，不是主力 [F2]。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">结果</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">支付超时率从 2.1% 降到 0.3% [D1]，订单列表 P99 从 1.8s 降到 420ms [D2]。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">需要说清楚限定：这组数字来自灰度阶段，覆盖 20% 的流量、观察 14 天 [D1]。<br>所以它能证明方向对，但还不能说「全量上线后没问题」。</section><section style="font-size:18.5px;font-weight:700;line-height:1.5;color:#111827;margin:2em 0 0.85em 0;border-left:4px solid #2f6fed;padding-left:10px">一条主动不写的数据</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">转化率那条我们不写。原文自己标注了两个口径对不上，「需与数据团队对齐」。</section><section style="margin:0 0 1.55em 0;line-height:1.85;color:#24292f">数据不确定的时候，不写比写错更好——少一个亮点，不背一个隐患。</section></section></div>
+<div class="warn">按钮复制的是<b>富文本</b>（保留内联样式），粘贴到公众号编辑区格式不会散。但<b>图片不会被带过去</b>——按左侧「正文图片」清单逐张上传。</div>
+</div>
+</div>
+</div>
+<div class="hint" style="margin-top:14px;padding-top:12px;border-top:1px solid #eef1f5">构建指纹 <code>6e015f928eed</code> · 生成于 2026-11-11T18:47:17+08:00<br>工作台是生成时的快照：改了正文、元信息或主题，必须重跑 <code>md2wx.py --sheet</code>，否则提交的是旧版本。</div><script>
+function flash(btn,text,ms){var o=btn.textContent;btn.textContent=text;
+  setTimeout(function(){btn.textContent=o;},ms||1500);}
+function copyText(btn,id){
+  var el=document.getElementById(id);
+  var t=el.innerText;
+  var ta=document.createElement('textarea');
+  ta.value=t;ta.style.position='fixed';ta.style.top='-9999px';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  document.body.removeChild(ta);
+  if(ok){flash(btn,'已复制');return;}
+  // 失败时退回「选中原文，让用户手动 Cmd+C」
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  flash(btn,'已选中，请按 Cmd+C',2600);
+}
+async function copyImg(btn,src){
+  try{
+    var resp=await fetch(src);
+    if(!resp.ok) throw new Error('fetch failed');
+    var blob=await resp.blob();
+    await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+    flash(btn,'已复制图片',1800);return;
+  }catch(e){}
+  window.open(src,'_blank');
+  flash(btn,'已打开，右键复制',2600);
+}
+function copyBody(btn){
+  var el=document.getElementById('article-body');
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  if(ok){flash(btn,'已复制正文');sel.removeAllRanges();return;}
+  flash(btn,'已选中正文，请按 Cmd+C',2600);
+}
+</script>
+</body>
+</html>

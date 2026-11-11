@@ -1,0 +1,45 @@
+{
+  "schema": 2,
+  "fingerprint": "15f3ccfe525f",
+  "generator": "2.2.0",
+  "generated_at": "2026-11-11T18:47:16+08:00",
+  "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/wechat-mp/examples/sample-article.md",
+  "theme": "tech",
+  "word_count": 1083,
+  "render": {
+    "theme": "tech",
+    "title": "别再手写 CRUD 了：一个接口层抽象，砍掉 60% 重复代码",
+    "author": "云光迷途",
+    "author_override": false,
+    "theme_override": false,
+    "title_override": false,
+    "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/wechat-mp/examples/sample-article.md",
+    "html": "article.html",
+    "body": true,
+    "sheet": true
+  },
+  "outputs": {
+    "html": "article.html",
+    "body": "article.body.html",
+    "sheet": "sheet.html"
+  },
+  "artifact_sha256": {
+    "html": "5a89dcbfa4f4a9cf29a41ba74ad27c4935be8b4156b896d32eb6ee86e26b6f37",
+    "body": "6c3c62bec4ef116da6589599152b0fd974e8c4f81e39617f1bf6c4117cea4c7a",
+    "sheet": "4214ab7876ad139c28035d19995e1ee5955c878f42b5d7d07eeda82a10704c9f"
+  },
+  "inputs": {
+    "text_sha256": "45a6e5b23bf5ea99f40cc708234bde6060718cca2eeaa89530e77aac54249e2f",
+    "theme_sha256": "3ced91d570a35db9d6afc3c999c5f93f915ffce7726f7f960c5301b12ed8c731",
+    "images": [
+      "cover-square.png",
+      "cover-thumb.png",
+      "cover.png"
+    ]
+  },
+  "assets": {
+    "cover-square.png": "3ad20b5af175de31dd408a07f0b4ef14492fefa07f50b15783badce8ecf54607",
+    "cover-thumb.png": "754782aec0bf13de39076a787f7ca675877830a8df54fc0f8b50c7b14d936fef",
+    "cover.png": "360e86a03465148053e2e4268e090ebf1691813a0471aead217dfaa2d718c572"
+  }
+}

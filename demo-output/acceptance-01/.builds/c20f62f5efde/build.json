@@ -1,0 +1,49 @@
+{
+  "schema": 2,
+  "fingerprint": "c20f62f5efde",
+  "generator": "2.2.0",
+  "generated_at": "2026-11-11T17:27:27+08:00",
+  "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/acceptance-01/article.md",
+  "theme": "minimal",
+  "word_count": 1236,
+  "render": {
+    "theme": "minimal",
+    "title": "AI 焦虑的真相：不是被取代，是「积累了也没用」",
+    "theme_override": false,
+    "title_override": false,
+    "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/acceptance-01/article.md",
+    "html": "article.html",
+    "body": true,
+    "sheet": true
+  },
+  "outputs": {
+    "html": "article.html",
+    "body": "article.body.html",
+    "sheet": "sheet.html"
+  },
+  "artifact_sha256": {
+    "html": "1a19ee67e9f8920cdd6ebb2e2fd4dbaef4709a2789ea43f5f575630b7bd7713b",
+    "body": "28a9bae648cdf9b420d4577c9d73b471287a5a89698c1465afb8a40e214dc488",
+    "sheet": "72f6ce8864da4b796ece6b123d0a506cb5e8ba7ffe4a51bb98d4810d5287a989"
+  },
+  "inputs": {
+    "text_sha256": "4e92c67e43e6be18bed45974ecf01a5968303bb79b9c391d393d16e6c1c1ed9b",
+    "theme_sha256": "f4c772d6db8be2cbc9b7c5a0d0bb602502a528a75c91f728ce373b0b523626d5",
+    "images": [
+      "cover-square.png",
+      "cover-thumb.png",
+      "cover.png",
+      "fig-two-curves.png"
+    ]
+  },
+  "assets": {
+    "cover-square.png": "e5ba945513e9ec3b4f506508d68c4a97add4b7bfca454fed3b57b2934b555fdc",
+    "cover-thumb.png": "3164fa993ebfa1fc34b694a2b4021c2c97a0651b4fb96c411523b190dc87eddd",
+    "cover.png": "91e4068371c700c2de2baad0783e10bc253087bdf08440a2ef92aecbdd09bb90",
+    "fig-two-curves.png": "b9240534be606b1599276273ee84c530243f0fe01aafea98490ee7183879fb56"
+  },
+  "snapshot": {
+    "source_file": ".snapshot-source.md",
+    "source_sha256": "4e92c67e43e6be18bed45974ecf01a5968303bb79b9c391d393d16e6c1c1ed9b"
+  }
+}

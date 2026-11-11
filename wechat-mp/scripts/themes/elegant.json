@@ -1,0 +1,96 @@
+{
+  "name": "elegant",
+  "label": "商务藏青 · 品牌/正式向",
+  "extends": "tech",
+  "showCodeLang": true,
+  "hrGlyph": "─────",
+  "colors": {
+    "accent": "#12395e",
+    "accentSoft": "#eaf0f6",
+    "note": "#2f5f8a",
+    "noteSoft": "#eef4fa",
+    "tip": "#1d6b5e",
+    "tipSoft": "#ecf7f4",
+    "warning": "#94631a",
+    "warningSoft": "#fbf6ec",
+    "important": "#4a3f7a",
+    "importantSoft": "#f3f1fa"
+  },
+  "page": {
+    "backgroundColor": "#eef1f4"
+  },
+  "wrapper": {
+    "backgroundColor": "#ffffff"
+  },
+  "styles": {
+    "body": {
+      "fontFamily": "'Songti SC', 'Noto Serif CJK SC', 'PingFang SC', 'Microsoft YaHei', serif",
+      "fontSize": "16.5px",
+      "lineHeight": "1.95",
+      "letterSpacing": "0.5px",
+      "color": "#1f2933"
+    },
+    "p": {
+      "margin": "0 0 1.6em 0",
+      "lineHeight": "1.95",
+      "color": "#1f2933"
+    },
+    "h1": {
+      "fontSize": "22px",
+      "color": "#0f2d4a",
+      "letterSpacing": "1px",
+      "textAlign": "center"
+    },
+    "h2": {
+      "decoration": "bar",
+      "barWidth": "3px",
+      "fontSize": "18px",
+      "color": "#0f2d4a",
+      "margin": "2em 0 0.9em 0",
+      "letterSpacing": "0.5px"
+    },
+    "h3": {
+      "fontSize": "16.5px",
+      "color": "#12395e",
+      "fontWeight": "700"
+    },
+    "strong": {
+      "color": "#12395e",
+      "fontWeight": "700"
+    },
+    "quote": {
+      "borderLeft": "3px solid #b9c9da",
+      "backgroundColor": "#f6f8fa",
+      "padding": "12px 16px",
+      "borderRadius": "0"
+    },
+    "quoteP": {
+      "color": "#4d5a68",
+      "fontStyle": "normal"
+    },
+    "bullet": {
+      "color": "#12395e"
+    },
+    "olNumber": {
+      "color": "#12395e"
+    },
+    "code": {
+      "fontFamily": "'SF Mono', Menlo, Consolas, monospace",
+      "backgroundColor": "#eef1f4",
+      "color": "#12395e"
+    },
+    "codeBlock": {
+      "backgroundColor": "#12263a"
+    },
+    "th": {
+      "backgroundColor": "#eef2f6",
+      "color": "#12395e"
+    },
+    "img": {
+      "borderRadius": "2px"
+    },
+    "hr": {
+      "letterSpacing": "2px"
+    }
+  }
+}

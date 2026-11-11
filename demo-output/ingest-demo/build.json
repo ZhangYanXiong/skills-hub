@@ -1,0 +1,45 @@
+{
+  "schema": 2,
+  "fingerprint": "6e015f928eed",
+  "generator": "2.2.0",
+  "generated_at": "2026-11-11T18:47:17+08:00",
+  "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/ingest-demo/article-draft.md",
+  "theme": "tech",
+  "word_count": 277,
+  "render": {
+    "theme": "tech",
+    "title": "支付超时治理：先砍同步依赖，再加缓存",
+    "author": "云光迷途",
+    "author_override": false,
+    "theme_override": false,
+    "title_override": false,
+    "source": "/Users/zhangyanxiong.3/Desktop/AI Learn/codes/skills-hub/demo-output/ingest-demo/article-draft.md",
+    "html": "article.html",
+    "body": true,
+    "sheet": true
+  },
+  "outputs": {
+    "html": "article.html",
+    "body": "article.body.html",
+    "sheet": "sheet.html"
+  },
+  "artifact_sha256": {
+    "html": "ccb259c817bb2cae3a6ffd3a77665dd43dc5e7113963d5b0a76dd27dd748546c",
+    "body": "c279c7b3dacd757fef293ab21638db66289e8c11dae8c6c2f21ced982d7078f6",
+    "sheet": "764382d90ca1826ff1063cecc3f76e1c204d34092f4d287d3c59ddadd0ba597b"
+  },
+  "inputs": {
+    "text_sha256": "9369227706181a0fe6d0d74243ab3c9f1e932a8cab368fed15859cf6602144a5",
+    "theme_sha256": "3ced91d570a35db9d6afc3c999c5f93f915ffce7726f7f960c5301b12ed8c731",
+    "images": [
+      "cover-square.png",
+      "cover-thumb.png",
+      "cover.png"
+    ]
+  },
+  "assets": {
+    "cover-square.png": "12d1a3b80972d9cb2eae03007e747238c438f89a98b9a02a2436c9d081831cea",
+    "cover-thumb.png": "87bc0a6a8495a8d21ec9acaccc9ce4ba434df26e374200640d8090e32d3c9003",
+    "cover.png": "5a287ad60127c9ba12058b406af3e3a80b8ff059fd26d4f9207f89f2bc9534d0"
+  }
+}

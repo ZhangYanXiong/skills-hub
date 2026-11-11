@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="wx-build" content="9f20d130aaac">
+<title>发布工作台 · AI 焦虑，怕的是白学</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:#eef1f5;color:#1f2328;
+     font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+     font-size:14px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:880px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:14px;
+      box-shadow:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.04)}
+h1{font-size:17px;margin:0 0 4px}
+.sub{color:#7a8494;font-size:12.5px;margin-bottom:16px}
+.field{margin-bottom:15px}
+.label{font-size:12px;color:#7a8494;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.value{font-size:14px;line-height:1.7;background:#f6f8fa;border:1px solid #e9edf2;border-radius:8px;
+       padding:10px 12px;word-break:break-word;white-space:pre-wrap}
+.row{display:flex;gap:8px;align-items:center}
+button{cursor:pointer;border:1px solid #d8dee6;background:#fff;border-radius:7px;padding:5px 11px;
+       font-size:12px;color:#374151;font-family:inherit;transition:background .15s,border-color .15s}
+button:hover{background:#f3f5f8}
+button:active{transform:translateY(1px)}
+button.primary{background:#2f6fed;color:#fff;border-color:#2f6fed}
+button.primary:hover{background:#255ccf}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cover{width:100%;border-radius:8px;border:1px solid #e5e9ef;display:block}
+.cover-label{font-size:11.5px;color:#7a8494;margin-top:5px}
+.check{font-size:13px;line-height:2;color:#374151}
+.check input{margin-right:7px;vertical-align:middle}
+#article-body{max-height:72vh;overflow:auto;border:1px solid #e5e9ef;border-radius:8px;padding:16px;background:#fff}
+.hint{font-size:12px;color:#8a94a0;margin-top:9px;line-height:1.65}
+.tag{display:inline-block;font-size:11px;background:#eef3ff;color:#2f6fed;border-radius:999px;padding:2px 9px;margin-left:6px}
+.warn{background:#fff8ec;border:1px solid #f3dfbc;border-radius:8px;padding:10px 12px;font-size:12.5px;
+      line-height:1.7;color:#7a5a1e;margin-top:10px}
+.ok{color:#0d9488;font-size:11.5px;min-width:44px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div>
+<div class="card">
+<h1>发布工作台</h1>
+<div class="sub">极简黑白 · 观点/评论向 · minimal · 1236 字 · 1 张图</div>
+<div class="field"><div class="label"><span>① 标题（长）<span class='tag'>24 字 / 上限 64</span></span><button onclick="copyText(this,'f-title')">复制</button></div><div class="value" id="f-title">AI 焦虑的真相：不是被取代，是「积累了也没用」</div></div><div class="field"><div class="label"><span>② 短标题（信息流展示用）<span class='tag'>11 字</span></span><button onclick="copyText(this,'f-short')">复制</button></div><div class="value" id="f-short">AI 焦虑，怕的是白学</div><div class="hint">公众号后台只填一个标题；短标题供你检查前 20 字是否说得清。</div></div><div class="field"><div class="label"><span>③ 摘要<span class='tag'>67 字 / 上限 120</span></span><button onclick="copyText(this,'f-summary')">复制</button></div><div class="value" id="f-summary">大多数人把 AI 焦虑归因于「被取代」，但真正让人慌的是投入不再产生复利——你学的东西，半年后可能就不值钱了。换一个更耐用的积累标的。</div></div><div class="field"><div class="label"><span>④ 作者（后台作者字段）</span><button onclick="copyText(this,'f-author')">复制</button></div><div class="value" id="f-author">云光迷途</div></div>
+</div>
+<div class="card"><div class="label"><span>封面图</span></div><div class="covers"><div><img class="cover" src="cover.png" alt="头条封面 900×383"><div class="cover-label">头条封面 900×383</div></div><div><img class="cover" src="cover-square.png" alt="方形 1080×1080"><div class="cover-label">方形 1080×1080</div></div><div><img class="cover" src="cover-thumb.png" alt="次条 200×200"><div class="cover-label">次条 200×200</div></div></div><div class="hint">上传时选 <b>cover.png</b> 作头条封面；次条用 cover-thumb.png。</div></div>
+<div class="card"><div class="label"><span>发布前清单</span></div><div class="check"><div><input type="checkbox">标题、摘要已填入后台（不是正文里）</div><div><input type="checkbox">封面图已上传，头条用 cover.png</div><div><input type="checkbox">正文里的图片已在编辑器里逐张上传（本地图片不会自动带过去）</div><div><input type="checkbox">文末「阅读原文」链接已设置（如需要）</div><div><input type="checkbox">留言、打赏、原创声明按要求开启</div><div><input type="checkbox">通读一遍手机预览，重点看表格和代码块</div></div></div>
+</div>
+<div>
+<div class="card">
+<div class="row" style="justify-content:space-between;margin-bottom:11px"><b style="font-size:14px">正文</b><button class="primary" onclick="copyBody(this)">复制正文</button></div>
+<div id="article-body"><section style="font-family:-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;font-size:16px;line-height:1.95;letter-spacing:0.6px;color:#1a1a1a;text-align:justify;word-break:break-word"><section style="font-size:21px;font-weight:700;line-height:1.5;color:#000000;margin:0 0 1.2em 0;letter-spacing:0.5px">AI 焦虑的真相：不是被取代，是「积累了也没用」</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">周三晚上十一点，你刷到一条推送：某个模型又更新了，某项能力超过了人类专家水平。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">你点了收藏，关掉手机，心里发闷。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">不是怕失业——你手头的工作还稳。是你突然意识到，自己已经连着几个月在下班后学新工具，却<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">说不清到底学到了什么</strong>。</section><section style="bar-width:4px;font-size:17.5px;font-weight:700;line-height:1.5;color:#000000;margin:2.2em 0 1em 0;padding-bottom:6px;letter-spacing:0.5px;border-bottom:2px solid #111111;display:inline-block">一、我们可能把焦虑的对象搞错了</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">这种情绪通常被叫做「AI 焦虑」，然后顺手归因成「怕被取代」。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">如果真是这样，解法应该很清楚：学得更快、钻得更深、变成那个例外。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">但试过的人都知道，这个方法不太管用。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">原因在于，<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">「被取代」是一个结果判断，而你的焦虑是一种过程感受。</strong></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">结果判断可以等：行业什么时候变、岗位什么时候被重构，都有相对明确的时间尺度，你等得到信号。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">过程感受不能等：它每天都在发生，每一条推送都在提醒你一次。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">每天真正在响的其实是这句话：</section><section style="border-left:3px solid #d4d4d4;background-color:#fafafa;padding:12px 16px;margin:1.4em 0;border-radius:0"><section style="color:#555555;font-size:14.5px;line-height:1.8;margin:0">我今天学的东西，半年后还值钱吗？</section></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">这句话背后不是恐惧，是<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">计算</strong>。</section><section style="bar-width:4px;font-size:17.5px;font-weight:700;line-height:1.5;color:#000000;margin:2.2em 0 1em 0;padding-bottom:6px;letter-spacing:0.5px;border-bottom:2px solid #111111;display:inline-block">二、算不过来的那一小时</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">过去学一门技术，投入产出是清楚的：一门语言能用很多年，一套方法论能撑住很长一段时间。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">现在你不确定。可能是半年，可能是三个月，也可能下周就冒出一个新东西，把你刚熟练的做法变成「上一代方案」。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">同样是一小时，<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">期望回报变了。</strong></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">人其实不怕辛苦，怕的是白辛苦。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">这也解释了一个看着有点反直觉的现象：<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">用得越多的人，往往越焦虑。</strong></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">不用 AI 的同事反而很平静——他还没投入，自然没有沉没成本要算。而你已经投入了，所以开始计算回报率。</section><section style="margin:1.4em 0;padding:12px 16px;border-radius:6px;border-left:3px solid #666666;background-color:#f7f7f7"><section style="font-weight:700;font-size:14.5px;margin:0 0 6px 0;line-height:1.5;color:#666666">别把这种焦虑当燃料</section><section style="font-size:14.5px;line-height:1.8;color:#46505c;margin:0">「焦虑驱动学习」在技能保鲜期长的年代是成立的，放到现在只是在加速消耗。<br>连续几个月用焦虑推着自己走，代价是：你不再愿意做任何短期看不到回报的事——而那类事，恰恰是积累判断力的。</section></section><section style="bar-width:4px;font-size:17.5px;font-weight:700;line-height:1.5;color:#000000;margin:2.2em 0 1em 0;padding-bottom:6px;letter-spacing:0.5px;border-bottom:2px solid #111111;display:inline-block">三、问题可能出在「积累标的」上</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">多数人默认的积累标的是<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">工具能力</strong>：会不会用某个模型、某个插件、某套工作流。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">但工具能力正在被商品化。它越来越便宜、越来越标准化、越来越不需要专门去学。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">那什么是没被商品化的？我看是三样：</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a"><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">定义问题。</strong> AI 很擅长答题，不擅长替你判断「该问什么」。练法：用 AI 之前，先写下你要解决的真实问题。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a"><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">验收结果。</strong> AI 出错是常态，判断它错在哪，需要你真的懂这一行。练法：不直接采纳，逐条追问「这个结论的依据是什么」。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a"><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">承担责任。</strong> 出事之后谁签字，这件事 AI 接不了。练法：主动认领结果，而不是把决定推给工具。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">这三样有个共同点：<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">都不绑定具体工具，而且越用越厚。</strong></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">工具会换，判断不会。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a"><section style="margin:1.6em 0;text-align:center"><img src="fig-two-curves.png" alt="两种投入的回报曲线：工具熟练度先涨后跌，判断力慢起但持续累积" style="width:100%;display:block;border-radius:0;margin:0 auto"><section style="font-size:12.5px;color:#8a94a0;margin-top:8px;text-align:center;line-height:1.6">两种投入的回报曲线：工具熟练度先涨后跌，判断力慢起但持续累积</section></section></section><section style="bar-width:4px;font-size:17.5px;font-weight:700;line-height:1.5;color:#000000;margin:2.2em 0 1em 0;padding-bottom:6px;letter-spacing:0.5px;border-bottom:2px solid #111111;display:inline-block">四、三个问题，自测你的投入有没有复利</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#111111;font-weight:700;font-size:0.95em;padding-right:0.35em">1.</span><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">今天学的东西，换一个工具还成立吗？</strong> 成立，是积累；不成立，只是熟练度。</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#111111;font-weight:700;font-size:0.95em;padding-right:0.35em">2.</span><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">有没有一件事，你比三个月前判断得更准了？</strong> 有，你在长；没有，你在忙。</section><section style="margin:0 0 0.55em 0;line-height:1.8;color:#24292f;padding-left:1.5em;text-indent:-1.5em"><span style="color:#111111;font-weight:700;font-size:0.95em;padding-right:0.35em">3.</span><strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">如果明天出现一个更强的模型，你的价值会缩水多少？</strong> 缩水很少，你积累的是判断；缩水很多，你积累的是操作。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">三题不需要全过，但<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">至少得有一题让你有点底气</strong>。一题都没有，那就是信号。</section><section style="bar-width:4px;font-size:17.5px;font-weight:700;line-height:1.5;color:#000000;margin:2.2em 0 1em 0;padding-bottom:6px;letter-spacing:0.5px;border-bottom:2px solid #111111;display:inline-block">五、焦虑不会消失，但可以换一种</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">我不打算说「别焦虑」，这句话除了让人更焦虑之外没什么用。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">我想说的是：<strong style="color:#000000;font-weight:700;text-decoration:underline;text-decoration-thickness:2px">焦虑的对象是可以换的。</strong></section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">「我会不会被取代」这个问题，你回答不了，也不该由你一个人回答。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">「我今天有没有积累一件跟工具无关的东西」这个问题，你今天就能回答。</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">前一种焦虑没有终点，因为你永远等不到一个明确答案。<br>后一种焦虑每天都有答案，而且答案在你自己手里。</section><section style="text-align:center;color:#a9b4c2;margin:2em 0;letter-spacing:7px;font-size:15px;line-height:1">— — —</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">如果你最近也在为了「跟上」而学习，不妨留言说说：你上一次学到的东西，是什么时候被一个新工具变得不再必要的？</section><section style="margin:0 0 1.7em 0;line-height:1.95;color:#1a1a1a">这可能比任何趋势预测都更能说明问题。</section></section></div>
+<div class="warn">按钮复制的是<b>富文本</b>（保留内联样式），粘贴到公众号编辑区格式不会散。但<b>图片需要手动上传</b>——本地方案无法把图片送进微信服务器。</div>
+</div>
+</div>
+</div>
+<div class="hint" style="margin-top:14px;padding-top:12px;border-top:1px solid #eef1f5">构建指纹 <code>9f20d130aaac</code> · 生成于 2026-11-11T17:46:06+08:00<br>工作台是生成时的快照：改了正文、元信息或主题，必须重跑 <code>md2wx.py --sheet</code>，否则提交的是旧版本。</div><script>
+function flash(btn,text,ms){var o=btn.textContent;btn.textContent=text;
+  setTimeout(function(){btn.textContent=o;},ms||1500);}
+function copyText(btn,id){
+  var el=document.getElementById(id);
+  var t=el.innerText;
+  var ta=document.createElement('textarea');
+  ta.value=t;ta.style.position='fixed';ta.style.top='-9999px';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  document.body.removeChild(ta);
+  if(ok){flash(btn,'已复制');return;}
+  // 失败时退回「选中原文，让用户手动 Cmd+C」
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  flash(btn,'已选中，请按 Cmd+C',2600);
+}
+function copyBody(btn){
+  var el=document.getElementById('article-body');
+  var r=document.createRange();r.selectNodeContents(el);
+  var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  if(ok){flash(btn,'已复制正文');sel.removeAllRanges();return;}
+  flash(btn,'已选中正文，请按 Cmd+C',2600);
+}
+</script>
+</body>
+</html>
